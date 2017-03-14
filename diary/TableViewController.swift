@@ -53,8 +53,10 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = contentList[indexPath.row]["title"]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+//        cell.textLabel?.text = contentList[indexPath.row]["title"]
+        cell.cellLabel.text = contentList[indexPath.row]["title"]
+        cell.cellImage.image = UIImage(named:"swift.jpeg")
         // Configure the cell...
 
         return cell

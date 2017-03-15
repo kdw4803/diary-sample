@@ -19,6 +19,8 @@
 		A23C4DCF1E75393800B8EE98 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23C4DCE1E75393800B8EE98 /* DetailViewController.swift */; };
 		A23C4DD11E7823C300B8EE98 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23C4DD01E7823C300B8EE98 /* TableViewCell.swift */; };
 		A23C4DD31E78247400B8EE98 /* swift.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A23C4DD21E78247400B8EE98 /* swift.jpeg */; };
+		A23C4DFD1E7834D700B8EE98 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23C4DFB1E7834D700B8EE98 /* Article+CoreDataClass.swift */; };
+		A23C4DFE1E7834D700B8EE98 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23C4DFC1E7834D700B8EE98 /* Article+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		A23C4DCE1E75393800B8EE98 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A23C4DD01E7823C300B8EE98 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		A23C4DD21E78247400B8EE98 /* swift.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpeg; sourceTree = "<group>"; };
+		A23C4DFB1E7834D700B8EE98 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataClass.swift"; path = "../Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A23C4DFC1E7834D700B8EE98 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "../Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		A20BF7A61E705D3B0061303F /* diary */ = {
 			isa = PBXGroup;
 			children = (
+				A23C4DFB1E7834D700B8EE98 /* Article+CoreDataClass.swift */,
+				A23C4DFC1E7834D700B8EE98 /* Article+CoreDataProperties.swift */,
 				A23C4DD21E78247400B8EE98 /* swift.jpeg */,
 				A20BF7A71E705D3B0061303F /* AppDelegate.swift */,
 				A20BF7A91E705D3B0061303F /* ViewController.swift */,
@@ -277,7 +283,9 @@
 			files = (
 				A20BF7B01E705D3B0061303F /* diary.xcdatamodeld in Sources */,
 				A20BF7AA1E705D3B0061303F /* ViewController.swift in Sources */,
+				A23C4DFD1E7834D700B8EE98 /* Article+CoreDataClass.swift in Sources */,
 				A23C4DCF1E75393800B8EE98 /* DetailViewController.swift in Sources */,
+				A23C4DFE1E7834D700B8EE98 /* Article+CoreDataProperties.swift in Sources */,
 				A23C4DD11E7823C300B8EE98 /* TableViewCell.swift in Sources */,
 				A20BF7A81E705D3B0061303F /* AppDelegate.swift in Sources */,
 				A23C4DCD1E75346F00B8EE98 /* TableViewController.swift in Sources */,

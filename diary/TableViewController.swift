@@ -117,6 +117,14 @@ class TableViewController: UITableViewController,NSFetchedResultsControllerDeleg
             if let indexPath = indexPath{
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
+            break
+        case .update:
+            if let indexPath = indexPath{
+                let article = self.controller.object(at: indexPath)
+                let cell = tableView.cellForRow(at: indexPath) as! TableViewCell
+                cell.textLabel?.text = article.title
+            }
+            break
         default:
             break
         }

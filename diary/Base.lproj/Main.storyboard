@@ -127,11 +127,11 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yVG-xd-O9H" id="sXu-ZA-dsh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105.66666666666667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AaQ-Ln-4tS">
-                                            <rect key="frame" x="15" y="0.0" width="384" height="105.66666666666667"/>
+                                            <rect key="frame" x="15" y="0.0" width="384" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -198,6 +198,14 @@
                                     <action selector="deleteButtonPressed:" destination="NFj-0k-ILU" eventType="touchUpInside" id="3lH-f5-xfU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVd-U8-2aA">
+                                <rect key="frame" x="20" y="648" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="수정하기"/>
+                                <connections>
+                                    <segue destination="g7E-vP-D6X" kind="show" identifier="modify" id="Upr-Xc-NdS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -221,6 +229,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6o-Rm-mbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1736.2318840579712" y="-622.01086956521749"/>
+        </scene>
+        <!--수정하기-->
+        <scene sceneID="U8J-IO-fIt">
+            <objects>
+                <viewController title="수정하기" id="g7E-vP-D6X" customClass="ModifyViewController" customModule="diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H8J-Jc-JbG"/>
+                        <viewControllerLayoutGuide type="bottom" id="NtX-1F-sLS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F2w-pw-G7S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bjh-GU-NNJ">
+                                <rect key="frame" x="20" y="72" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QTH-J4-KvV">
+                                <rect key="frame" x="20" y="110" width="374" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="HPY-zO-O2X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2a-lw-1rX">
+                                <rect key="frame" x="20" y="686" width="374" height="30"/>
+                                <state key="normal" title="수정하기"/>
+                                <connections>
+                                    <action selector="updateButtonPressed:" destination="g7E-vP-D6X" eventType="touchUpInside" id="hMt-Sx-TY4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bjh-GU-NNJ" firstAttribute="trailing" secondItem="QTH-J4-KvV" secondAttribute="trailing" id="2Tv-WU-ZKd"/>
+                            <constraint firstItem="QTH-J4-KvV" firstAttribute="top" secondItem="Bjh-GU-NNJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4PT-1m-zUt"/>
+                            <constraint firstItem="QTH-J4-KvV" firstAttribute="trailing" secondItem="O2a-lw-1rX" secondAttribute="trailing" id="5eP-dZ-3I8"/>
+                            <constraint firstAttribute="bottom" secondItem="O2a-lw-1rX" secondAttribute="bottom" constant="20" symbolic="YES" id="CZS-tb-bP8"/>
+                            <constraint firstItem="Bjh-GU-NNJ" firstAttribute="leading" secondItem="F2w-pw-G7S" secondAttribute="leadingMargin" id="hSq-a1-MgZ"/>
+                            <constraint firstItem="QTH-J4-KvV" firstAttribute="leading" secondItem="O2a-lw-1rX" secondAttribute="leading" id="mI7-xh-TF7"/>
+                            <constraint firstItem="Bjh-GU-NNJ" firstAttribute="trailing" secondItem="F2w-pw-G7S" secondAttribute="trailingMargin" id="qPo-40-RnG"/>
+                            <constraint firstItem="Bjh-GU-NNJ" firstAttribute="top" secondItem="H8J-Jc-JbG" secondAttribute="bottom" constant="8" symbolic="YES" id="rAd-RJ-2ev"/>
+                            <constraint firstItem="Bjh-GU-NNJ" firstAttribute="leading" secondItem="QTH-J4-KvV" secondAttribute="leading" id="xHb-Z6-ZVW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textArea" destination="QTH-J4-KvV" id="6TN-Dc-4Ar"/>
+                        <outlet property="textInput" destination="Bjh-GU-NNJ" id="G97-uM-mpX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pF8-Nv-p4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2439.130434782609" y="-622.01086956521749"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cLO-kN-P6F">

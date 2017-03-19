@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
@@ -17,8 +18,12 @@ class DetailViewController: UIViewController {
 //    var contentText:String?
     var article:Article?
     
+    var controller:NSFetchedResultsController<Article>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchArticles()
         
         titleLabel.text = article?.title
         contentLabel.text = article?.content
@@ -37,15 +42,53 @@ class DetailViewController: UIViewController {
         
         _ = navigationController?.popViewController(animated: true)
     }
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "modify" {
+            let detailViewController: ModifyViewController = segue.destination as! ModifyViewController
+            
+            detailViewController.article = article
+            
+        }
+        
     }
-    */
+    
+    func fetchArticles() {
+        //TODO : should implement
+        let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+        let dataSort = NSSortDescriptor(key:"createdAt",ascending:false)
+        fetchRequest.sortDescriptors = [dataSort]
+        let controller = NSFetchedResultsController(
+            fetchRequest: fetchRequest, managedObjectContext: context,
+            sectionNameKeyPath: nil, cacheName: nil
+        )
+        self.controller = controller
+        self.controller.delegate = self
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .update:
+            titleLabel.text = article?.title
+            contentLabel.text = article?.content
+            break
+        default:
+            break
+        }
+    }
+    
 
 }
